@@ -72,8 +72,8 @@ GROUP BY category.name;
 -- Display the film title and the last rental date, if available.
 SELECT film.title, MAX(rental.rental_date) AS last_rental
 FROM film
-LEFT JOIN inventory ON film.film_id = inventory.film_id
-LEFT JOIN rental ON inventory.inventory_id = rental.inventory_id
+LEFT JOIN inventory ON film.film_id = inventory.film_id 
+LEFT JOIN rental ON inventory.inventory_id = rental.inventory_id -- left join to include null as well
 GROUP BY film.title;
 
 -- 9) Customer Spending on Rentals
